@@ -1,0 +1,22 @@
+type Emission {
+    id: ID!
+    emissionType: String!
+    marketType: String!
+    factor: Float!
+    rate: Float!
+    product: String!
+    symbol: String!
+    status: String!
+    company: Company
+}
+
+type Company {
+    id: ID!
+    shortName: String!
+    description: String!
+}
+
+type Query {
+    getAllEmissions: [Emission]!
+    getEmissionById(id: Int): Emission!
+}
